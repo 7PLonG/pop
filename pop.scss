@@ -1,0 +1,208 @@
+.pop {
+    &.hide { opacity: 0; }
+    //居中1
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    //position: absolute;
+    background-color: rgba(0, 0, 0, .8);
+    box-shadow: 0 0 5px 1px #141414;
+    z-index: 4;
+    //通用类
+    .pop_title {
+        >p {
+            text-align: center;
+        }
+    }
+    .btn_wrapper {
+        display: flex;
+        justify-content:center;
+        width: 100%;
+        box-sizing: border-box;
+        .btn {
+            //flex:0 1 30%;
+            display: flex;
+            align-items: center;
+            justify-items: center;
+
+        }
+        .btn_sub {
+            color: #fff;
+            background-color: rgba(58, 165, 255 ,1);
+        }
+        .btn_res {
+            //color: red;
+            background-color: rgba(204, 204, 204 ,1);
+        }
+
+    }
+
+    //特异化调整
+    &.pop_msg {
+        width: 80%;
+        padding: q(40) q(50);
+        background-color: #fff;
+        border-radius: q(23);
+        .pop_title {
+            >p {
+                font-size: q(28);
+                line-height: 2;
+                color: rgba(51,51,51,1);
+            }
+        }
+        .pop_content {
+            font-size: q(23);
+            line-height: 1.5;
+            color: rgba(128,128,128,1);
+            max-height: q(580);
+            min-height: q(200);
+            overflow-y: auto;
+        }
+        .pop_close {
+            top: q(15);
+            right: q(15);
+            width: q(40);
+            height: q(40);
+            position: absolute;
+        }
+
+        .pop_close:before, .pop_close:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: q(40);
+            height: 1px;
+            background-color: #888;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        .pop_close:after {
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+        .btn_wrapper {
+            .btn {
+                font-size: q(31);
+                margin-top: q(35);
+                margin-left: q(90);
+                text-align: center;
+                &:first-child{
+                    margin-left: 0;
+                }
+                height: q(84);
+                border-radius: q(37);
+                color: #fff;
+                >span {
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                }
+                &:nth-last-child(1):first-child{
+                    //一组按钮的唯一按钮
+                    width:85%;
+                }
+                &:nth-last-child(2):first-child{
+                    //两组按钮的第一个按钮
+                    width: 34%;
+                }
+                &:nth-last-child(2):first-child ~ .btn{
+                    //两组按钮的第二个按钮
+                    width:34%;
+                }
+            }
+            .btn_sub {
+
+            }
+            .btn_res {
+
+            }
+
+        }
+    }
+    &.pop_confirm {
+        width: q(500);
+        border-radius: q(12);
+        background-color: #fff;
+        padding-top: q(34);
+        .pop_title {
+            >p {
+                font-size: q(32);
+                line-height: 2;
+                color: rgba(51,51,51,1);
+            }
+        }
+        .pop_content {
+            padding: q(34) q(40);
+            >p{
+                font-size: q(28);
+                text-align: center;
+                line-height: 1.5;
+                color: #000;
+            }
+
+        }
+        .btn_wrapper {
+            .btn {
+                box-sizing: border-box;
+                font-size: q(28);
+                text-align: center;
+                height: q(68);
+                border-top: 1px solid #ccc;
+                color: #fff;
+                >span {
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                }
+                &:nth-last-child(1):first-child{
+                    //一组按钮的唯一按钮
+                    width:100%;
+                    border-bottom-left-radius: q(12);
+                    border-bottom-right-radius:q(12);
+                }
+                &:n irst-child{
+                    //两组按钮的第一个按钮
+                    width: 50%;
+                    border-bottom-left-radius: q(12);
+                    border-right: 1px solid #ccc;
+
+                }
+                &:nth-last-child(2):first-child ~ .btn{
+                    //两组按钮的第二个按钮
+                    width:50%;
+                    border-bottom-right-radius:q(12);
+
+                }
+            }
+            .btn_sub {
+                background-color: #eee;
+                color: #309afc;
+            }
+            .btn_res {
+                color: #9e9e9e;
+                background-color: #fff;
+            }
+
+        }
+    }
+    &.pop_tip {
+        color: rgba(255, 255, 255, 1);
+        font-size: q(28);
+        max-width: q(400);
+        padding: q(50) q(70);
+        background-color: rgba(51, 51, 51, .8);
+        border-radius: q(17);
+        opacity: 1; transition: opacity ease-in .2s;
+    }
+
+}
+.winMark {
+    z-index: 3;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.6);
+}
