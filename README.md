@@ -1,11 +1,16 @@
 # pop
-jq+ES6 构成项目弹窗
- type:msg,confirm,tip
-  msg  长窗口，可展示多项内容，可以不传入popTit，并在popText传入HTML结构
-  confirm 短小窗口,展示短小文案，用于确认性提示
-  tip 提示窗口，几秒后消失
+jq+ES6 构成项目弹窗  
 
-依赖JQ
+ type:msg,confirm,tip  
+ 
+  msg  长窗口，可展示多项内容，可以不传入popTit，并在popText传入HTML结构  
+  
+  confirm 短小窗口,展示短小文案，用于确认性提示  
+  
+  tip 提示窗口，几秒后消失  
+  
+
+依赖JQ版本1.9 -3.3
 
     //$.pop('msg',{subBtn:'123',popTit:'tit',popText:'content',created:function(){alert(1)}})
     
