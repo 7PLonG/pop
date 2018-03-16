@@ -1,7 +1,7 @@
 # pop
 jq+ES6 构成项目弹窗  
 
- type:msg,confirm,tip  
+ 第一参数：msg、confirm、tip  (必填)
  
   msg  长窗口，可展示多项内容，可以不传入popTit，并在popText传入HTML结构  
   
