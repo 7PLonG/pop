@@ -28,7 +28,7 @@ jq+ES6 构成项目弹窗
         closeTime:2000,   //type为tip时的关闭时长
         mark:true,         //是否遮罩层
         created:function(){},  //弹窗创建时回调
-
+        stopScroll:false,    //禁止页面滚动
         // Return,
         // markAdd,
     };
