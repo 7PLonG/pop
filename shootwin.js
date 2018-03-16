@@ -1,5 +1,5 @@
 ;(function ($) {
-
+    "use strict";
     // type:msg,confirm,tip
     //  msg  长窗口，可展示多项内容，可以不传入popTit，并在popText传入HTML结构
     //  confirm 短小窗口,展示短小文案，用于确认性提示
@@ -45,17 +45,17 @@
                               notClose= setPopDefault.notClose,
                               closeTime= setPopDefault.closeTime,
                               mark= setPopDefault.mark,
-                              stopScroll= setPopDefault.true,
+                              stopScroll= setPopDefault.stopScroll,
                               created= setPopDefault.created,
                           } = setPopDefault
                       ){
         // 函数主体
 
             // 定义变量
-            const subClass = '';
-            const scrollTop = window.pageYOffset
-                    || document.documentElement.scrollTop
-                    || document.body.scrollTop || 0;
+            // const subClass = '';
+            // const scrollTop = window.pageYOffset
+            //         || document.documentElement.scrollTop
+            //         || document.body.scrollTop || 0;
             let scrollvalue = 0;
 
             // 内部函数事件：
@@ -131,11 +131,7 @@
                         })
                     }
                 };
-                if(closeBtnOn){
-                    return closeBtnObj
-                }else {
-                    return ''
-                }
+                return closeBtnOn ? closeBtnObj : ''
             })(closeBtnOn,closeCb);
 
             // 确认按钮模块
@@ -154,11 +150,7 @@
                                 })
                         }
                 };
-                if(subBtn){
-                    return subBtnObj
-                }else {
-                    return ''
-                }
+                return subBtn ? subBtnObj : ''
             })(subBtn,subCb);
 
             // 取消按钮模块
@@ -177,11 +169,7 @@
                         })
                     }
                 };
-                if(resBtn){
-                    return resBtnObj
-                }else {
-                    return ''
-                }
+                return resBtn ? resBtnObj : ''
             })(resBtn,resCb);
             // 按钮组字符串拼合
             const btnPart = `
